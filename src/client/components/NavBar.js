@@ -1,4 +1,5 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import ThemeContext from './Context/ThemeContext'; // Import the context
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
 import Home from './Home'
 import Gallery from './Gallery'
@@ -6,8 +7,10 @@ import Contact from './Contact'
 import ReviewForm from './ReviewForm'
 
 function NavBar (){
+    const { theme } = useContext(ThemeContext); // Use context value
+
     return(
-        <div>
+        <div style={{ backgroundColor: theme === 'dark' ? '#333' : '#CCC' }}>
             <Router>
             <nav>
                 <ul>

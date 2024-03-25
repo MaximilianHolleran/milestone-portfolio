@@ -1,14 +1,13 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import Navbar from './Navbar'; // Import your Navbar component
+import ThemeContext from './ThemeContext'; // Import the context
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="Portfolio">
-      
-    </div>
+    <ThemeContext.Provider value={{ theme: 'dark' }}> {/* Provide context with value */}
+      <Navbar /> {/* Now Navbar can access ThemeContext */}
+      {/* Other components */}
+    </ThemeContext.Provider>
   );
 }
 
