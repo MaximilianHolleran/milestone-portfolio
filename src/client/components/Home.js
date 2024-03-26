@@ -7,8 +7,9 @@ function Home() {
   ];
 
   const [skillDisplay, setSkillDisplay] = useState('');
-
-  useEffect(() => {
+  const e = onLoad();
+  
+  useEffect((e) => {
     const intervalId = setInterval(() => {
       const randomSkillIndex = Math.floor(Math.random() * skillList.length); // Corrected variable name
       setSkillDisplay(skillList[randomSkillIndex]);
@@ -19,9 +20,11 @@ function Home() {
   }, []); // Added dependency array
 
   return (
-    <div className="displayBox">
+    <div className="homeContainer">
+      <div className="displayBox">
       Randomly selected: {skillDisplay}
     </div> // consider using Canvas maybe?
+    </div>
   );
 }
 
