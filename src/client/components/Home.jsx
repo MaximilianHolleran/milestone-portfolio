@@ -23,7 +23,9 @@ function Home() {
     <div className="homeContainer">
       <div className="displayBox">
       Randomly selected: {skillDisplay}
-    </div> // consider using Canvas maybe?
+    </div> 
+  
+    {/* // consider using Canvas maybe? */}
     </div>
   );
 }
