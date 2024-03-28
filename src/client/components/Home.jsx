@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
+import NavBar from './NavBar'
 
 function Home() {
   let skillList = [
@@ -7,9 +8,9 @@ function Home() {
   ];
 
   const [skillDisplay, setSkillDisplay] = useState('');
-  const e = onLoad();
+ 
   
-  useEffect((e) => {
+  useEffect(() => {
     const intervalId = setInterval(() => {
       const randomSkillIndex = Math.floor(Math.random() * skillList.length); // Corrected variable name
       setSkillDisplay(skillList[randomSkillIndex]);
@@ -21,6 +22,7 @@ function Home() {
 
   return (
     <div className="homeContainer">
+      <NavBar/>
       <div className="displayBox">
       Randomly selected: {skillDisplay}
     </div> 

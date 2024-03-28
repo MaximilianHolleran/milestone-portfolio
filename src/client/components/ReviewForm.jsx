@@ -60,7 +60,7 @@ return(
                 </select>
             </div>
         
-                <input className="btn btn-primary" type="submit" value="Request Referral" />
+                <input className="btn btn-primary" type="submit" value="Submit Review" />
             </form>
 
         </div>

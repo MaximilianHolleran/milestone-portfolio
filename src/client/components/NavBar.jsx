@@ -1,37 +1,25 @@
 import {useState, useContext} from 'react'
 import ThemeContext from './Context/ThemeContext'; // Import the context
-import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
-import Home from './Home'
-import Gallery from './Gallery'
-import Contact from './Contact'
-import ReviewForm from './ReviewForm'
+import { Link} from 'react-router-dom'
+
 
 function NavBar (){
-    const { theme } = useContext(ThemeContext); // Use context value
-
+    // const theme = useContext(ThemeContext); // Use context value
+    // console.log(theme)
     return(
-        <div style={{ backgroundColor: theme === 'dark' ? '#333' : '#CCC' }}>
-            <Router>
-            <nav>
-                <ul>
-                    <li><Link to="/" className="">Home</Link></li>
-                    <li><Link to="/gallery" className="">Gallery</Link></li>
-                    <li><Link to="/contact" className="">Contact</Link></li>
-                    <li><Link to="reviewForm" className="">Reviews</Link></li>
-                </ul>
+        // <div style={{ backgroundColor: theme === 'dark' ? '#333' : '#CCC' }}>
+            <nav className="nav-wrapper">
+                <div className="nav-content">
+                    <ul>
+                        <li><Link to="/" className="menu-item">Home</Link></li>
+                        <li><Link to="/gallery" className="menu-item">Gallery</Link></li>
+                        <li><Link to="/contact" className="menu-item">Contact</Link></li>
+                        <li><Link to="/reviewForm" className="menu-item">Reviews</Link></li>
+                    </ul>
+                </div>
             </nav>
-            </Router>
 
-            <div className="route-dom">
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/gallery" element={<Gallery/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
-                    <Route path="/reviewForm" element={<ReviewForm/>}/>
-                </Routes>
-            
-            </div>
-        </div>
+        // </div>
 
        
     );
