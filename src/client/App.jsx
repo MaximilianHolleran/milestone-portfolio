@@ -1,14 +1,27 @@
 import { useState } from "react";
-import "./App.css";
+
+import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
+import Home from './components/Home'
+import NavBar from './components/NavBar'
+import Gallery from './components/Gallery'
+import Contact from './components/Contact'
+import ReviewForm from './components/ReviewForm'
+import ThemeContext from './components/Context/ThemeContext'; // Import the context
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="Portfolio">
-      
-    </div>
-  );
+  
+    <ThemeContext.Provider value={{ theme: 'dark' }}> {/* Provide context with value */}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/reviewForm" element={<ReviewForm/>}/>
+      </Routes>
+    </Router> 
+    </ThemeContext.Provider>
+  ) ;
 }
 
 export default App;
