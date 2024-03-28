@@ -21,14 +21,10 @@ function Home() {
   }, []); // Added dependency array
 
   return (
-    <div className="homeContainer">
-      <NavBar/>
-      <div className="displayBox">
+    
+    <div className="displayBox">
       Randomly selected: {skillDisplay}
     </div> 
-  
-    {/* // consider using Canvas maybe? */}
-    </div>
   );
 }
 

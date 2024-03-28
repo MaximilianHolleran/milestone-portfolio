@@ -1,10 +1,10 @@
 // import {useState} from 'react'
-import linkedinLogo from './public/assets/linkedinLogo.jpg';
-import lPortrait from './assets/portrait.jpg';
-import resumeThumbnail from './assets/resumeThumbnail.png';
+// import linkedinLogo from './linkedinLogo.jpg';
+// import lPortrait from './assets/portrait.jpg';
+// import resumeThumbnail from './assets/resumeThumbnail.png';
 
 function Contact (){
-    const linkInLogo = linkedinLogo
+    
     const luisImg = lPortrait
     const resumeThumb = resumeThumbnail
     return(

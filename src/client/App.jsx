@@ -10,7 +10,7 @@ import ThemeContext from './components/Context/ThemeContext'; // Import the cont
 
 function App() {
   return (
-  
+
     <ThemeContext.Provider value={{ theme: 'dark' }}> {/* Provide context with value */}
     <Router>
       <Routes>
@@ -20,7 +20,20 @@ function App() {
         <Route path="/reviewForm" element={<ReviewForm/>}/>
       </Routes>
     </Router> 
+
+    <div>
+      <div className="img-container">
+      <img className="" src="" alt=""/>
+      <div className="nav-container">
+        <NavBar/>
+      </div>
+    {/* // consider using Canvas maybe? */}
+    </div>
+
+    </div>
     </ThemeContext.Provider>
+
+   
   ) ;
 }
 
