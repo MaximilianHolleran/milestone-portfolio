@@ -1,8 +1,8 @@
 import {useState, useContext} from 'react'
 import ThemeContext from './Context/ThemeContext'; // Import the context
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
-import Home from './Home'
-import Gallery from './Gallery'
+import Home from './Home.jsx'
+import Gallery from './Gallery.jsx'
 import Contact from './Contact'
 import ReviewForm from './ReviewForm'
 
