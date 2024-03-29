@@ -5,7 +5,6 @@ import express from 'express';
 const router = express.Router();
 
 // Routes
-
 router.get('/projects', (req, res) => {
     res.send('PROJECTS DATA');
 });
@@ -19,8 +18,8 @@ router.get('/reviews', (req, res) => {
 });
 
 router.get('*', (req, res) => {
-    res.redirect('/portfolios')
-    //res.send('HOME PAGE');
+    res.send('404')
 });
+
 // Export the router
 export default router;
