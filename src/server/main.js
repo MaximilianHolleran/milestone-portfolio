@@ -2,31 +2,28 @@
 import express from "express";
 import ViteExpress from "vite-express";
 import dotenv from "dotenv";
+import apisRouter from './controllers/api.js';
+import mongoose from 'mongoose'
 
 // CONFIGURATION
-dotenv.config()
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT
+mongoose.connect(process.env.MONGO_URI)
+console.log('connected to mongo: ', process.env.MONGO_URI)
 
-// MIDDLEWARE
-// Express Settings
-// app.set('view engine', 'jsx')
-// app.engine('jsx', require('express-react-views').createEngine())
-// app.use(express.static('public'))
+// Middleware to parse JSON requests
+app.use(express.json());
 
-// Controllers & Routes
-//app.use(express.urlencoded({ extended: true }))
-//app.use('/pages', require('../controllers/pages'))
-
-// ROUTES
-app.get("/hello", (req, res) => {
-  res.send("Hello Vite + React!");
+// Define routes
+app.post('/data', (req, res) => {
+  // Access JSON data from the request body
+  console.log('Received JSON data:', req.body);
+  res.send('Received JSON data');
 });
 
-// 404 Page
-app.get('*', (req, res) => {
-  res.send('404')
-})
+// ROUTES
+app.use('/api', apisRouter)
 
 // LISTEN
 ViteExpress.listen(app, PORT, () =>
