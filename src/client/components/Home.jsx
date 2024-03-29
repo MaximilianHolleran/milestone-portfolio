@@ -24,6 +24,7 @@ function Home() {
     
     <div className="displayBox">
       Randomly selected: {skillDisplay}
+      <NavBar/>
     </div> 
   );
 }
