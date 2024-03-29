@@ -5,21 +5,22 @@ import express from 'express';
 const router = express.Router();
 
 // Routes
-router.get('/', (req, res) => {
-    res.send('HOME PAGE');
-});
 
 router.get('/projects', (req, res) => {
-    res.send('PROJECTS PAGE');
+    res.send('PROJECTS DATA');
 });
 
 router.get('/contacts', (req, res) => {
-    res.send('CONTACTS PAGE');
+    res.send('CONTACTS DATA');
 });
 
 router.get('/reviews', (req, res) => {
-    res.send('REVIEWS PAGE');
+    res.send('REVIEWS DATA');
 });
 
+router.get('*', (req, res) => {
+    res.redirect('/portfolios')
+    //res.send('HOME PAGE');
+});
 // Export the router
 export default router;

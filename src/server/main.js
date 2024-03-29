@@ -2,24 +2,18 @@
 import express from "express";
 import ViteExpress from "vite-express";
 import dotenv from "dotenv";
-import portfoliosRouter from '../server/controllers/portfolios.js';
+import apisRouter from './controllers/api.js';
+import mongoose from 'mongoose'
 
 // CONFIGURATION
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT
+mongoose.connect(process.env.MONGO_URI)
+console.log('connected to mongo: ', process.env.MONGO_URI)
 
 // ROUTES
-app.get("/hello", (req, res) => {
-  res.send("Hello Vite + React!");
-});
-
-app.use('/portfolios', portfoliosRouter);
-
-// 404 Page
-app.get('*', (req, res) => {
-  res.send('404')
-})
+app.use('/api', apisRouter)
 
 // LISTEN
 ViteExpress.listen(app, PORT, () =>
