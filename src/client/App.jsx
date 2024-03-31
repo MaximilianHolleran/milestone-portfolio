@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
-import Home from './components/Home'
-import NavBar from './components/NavBar'
-import Gallery from './components/Gallery'
-import Contact from './components/Contact'
-import ReviewForm from './components/ReviewForm'
+import Home from './Home/Home'
+import NavBar from './components/NavBar/NavBar'
+import Gallery from './components/Projects/Gallery'
+import Contact from './components/Contact/Contact'
+import ReviewForm from './components/ReviewForm/ReviewForm'
 import ThemeContext from './components/Context/ThemeContext'; // Import the context
 
 function App() {
