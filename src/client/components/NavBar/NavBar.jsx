@@ -1,5 +1,5 @@
 import {useState, useContext} from 'react'
-import ThemeContext from './Context/ThemeContext'; // Import the context
+import ThemeContext from '../Context/ThemeContext'; // Import the context
 import { Link} from 'react-router-dom'
 import './NavBar.css'
 
@@ -10,6 +10,10 @@ const NavBar = () =>{
     return(
         // <div style={{ backgroundColor: theme === 'dark' ? '#333' : '#CCC' }}>
             <nav className="nav-wrapper">
+                <button class="menu-btn" onClick={()=>{} }>
+                    <span class={"material-symbols-outlined"} style={{fontSize: "1.8rem"}}>Menu
+                    </span>
+                </button>
                 <div className="nav-content">
                     <ul className="nav-content-ul">
                         <li><Link to="/" className="menu-item">Home</Link></li>
@@ -18,6 +22,7 @@ const NavBar = () =>{
                         <li><Link to="/reviewForm" className="menu-item">Reviews</Link></li>
                     </ul>
                 </div>
+                
             </nav>
 
         // </div>
