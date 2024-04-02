@@ -1,6 +1,7 @@
 // // Import the required modules
 import express from 'express';
 
+import Review from '../models/review.js';
 // Router
 const router = express.Router();
 
@@ -18,9 +19,15 @@ router.get('/reviews', (req, res) => {
     res.send('REVIEWS DATA');
 });
 
-router.post('/reviews', (req, res) => {
-    console.log(req.body)
-})
+router.post('/reviews', async (req, res) => {
+    const { author, stars, email, content } = req.body;
+        try {
+        const newReview = await Review.create({ author, stars, email, content });
+        res.status(201).json(newReview);
+            } catch (error) {
+        res.status(400).json({ error: error.message });
+        }
+    });
 
 router.get('*', (req, res) => {
     res.send('404')
