@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
+import NavBar from '../components/NavBar/NavBar'
+import backgroundRegular from './milestone-background.jpeg'
+import backgroundDark from './milestone-background-white.jpeg'
 
 function Home() {
   let skillList = [
@@ -6,10 +9,12 @@ function Home() {
     'NodeJS', 'Express', 'Mongoose/Mongo', 'Sequelize'
   ];
 
-  const [skillDisplay, setSkillDisplay] = useState('');
-  const e = onLoad();
   
-  useEffect((e) => {
+
+  const [skillDisplay, setSkillDisplay] = useState('');
+ 
+  
+  useEffect(() => {
     const intervalId = setInterval(() => {
       const randomSkillIndex = Math.floor(Math.random() * skillList.length); // Corrected variable name
       setSkillDisplay(skillList[randomSkillIndex]);
@@ -20,11 +25,16 @@ function Home() {
   }, []); // Added dependency array
 
   return (
-    <div className="homeContainer">
-      <div className="displayBox">
-      Randomly selected: {skillDisplay}
-    </div> // consider using Canvas maybe?
-    </div>
+    <>
+    <NavBar/>
+    <div className="displayBox">
+      <a><img className="backgroundImg" src={backgroundRegular} alt="cyberpunk-themed building"/></a>
+      <div className="skillDisplay">
+      Knowledgeable in: {skillDisplay}
+      </div>
+      
+    </div> 
+    </>
   );
 }
 
