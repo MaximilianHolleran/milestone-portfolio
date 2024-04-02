@@ -8,15 +8,15 @@ const router = express.Router();
 
 // Routes
 router.get('/projects', (req, res) => {
-    res.send('PROJECTS DATA');
+    res.json('PROJECTS DATA');
 });
 
 router.get('/contacts', (req, res) => {
-    res.send('CONTACTS DATA');
+    res.json('CONTACTS DATA');
 });
 
 router.get('/reviews', (req, res) => {
-    res.send('REVIEWS DATA');
+    res.json('REVIEWS DATA');
 });
 
 router.post('/reviews', async (req, res) => {
@@ -30,7 +30,7 @@ router.post('/reviews', async (req, res) => {
     });
 
 router.get('*', (req, res) => {
-    res.send('404')
+    res.json('404')
 });
 
 
