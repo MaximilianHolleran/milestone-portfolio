@@ -1,10 +1,12 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+const { Schema } = mongoose
 
-let reviewSchema = new mongoose.Schema({
+const reviewSchema = new Schema({
     author: { type: String, default: 'Anonymous' },
-    rant: { type: Boolean, default: false },
     stars: { type: Number, required: true },
+    email: { type: String, required: true},
     content: { type: String, default: '' }
 })
 
-module.exports = mongoose.model('Review', reviewSchema)
+const Review = mongoose.model('Review', reviewSchema)
+export default Review

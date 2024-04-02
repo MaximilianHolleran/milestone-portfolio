@@ -4,6 +4,7 @@ import express from 'express';
 // Router
 const router = express.Router();
 
+
 // Routes
 router.get('/projects', (req, res) => {
     res.send('PROJECTS DATA');
@@ -17,9 +18,14 @@ router.get('/reviews', (req, res) => {
     res.send('REVIEWS DATA');
 });
 
+router.post('/reviews', (req, res) => {
+    console.log(req.body)
+})
+
 router.get('*', (req, res) => {
     res.send('404')
 });
+
 
 // Export the router
 export default router;
