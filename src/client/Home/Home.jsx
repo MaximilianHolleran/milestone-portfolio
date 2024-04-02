@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'; 
-import NavBar from './NavBar'
+import NavBar from '../components/NavBar/NavBar'
+import backgroundRegular from './milestone-background.jpeg'
+import backgroundDark from './milestone-background-white.jpeg'
 
 function Home() {
   let skillList = [
     'JavaScript', 'React', 'Redux', 'Python', 'Git', 'Express',
     'NodeJS', 'Express', 'Mongoose/Mongo', 'Sequelize'
   ];
+
+  
 
   const [skillDisplay, setSkillDisplay] = useState('');
  
@@ -21,11 +25,16 @@ function Home() {
   }, []); // Added dependency array
 
   return (
-    
+    <>
+    <NavBar/>
     <div className="displayBox">
-      Randomly selected: {skillDisplay}
-      <NavBar/>
+      <a><img className="backgroundImg" src={backgroundRegular} alt="cyberpunk-themed building"/></a>
+      <div className="skillDisplay">
+      Knowledgeable in: {skillDisplay}
+      </div>
+      
     </div> 
+    </>
   );
 }
 
