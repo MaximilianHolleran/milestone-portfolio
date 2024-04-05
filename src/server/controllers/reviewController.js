@@ -31,28 +31,30 @@ export const getReview = async (req, res) => {
 export const createReview = async (req, res) => {
     const { author, stars, email, content } = req.body;
         try {
-        const newReview = await Review.create({ author, stars, email, content });
-        res.status(201).json(newReview);
-            } catch (error) {
-        res.status(400).json({ error: error.message });
+
+    const newReview = await Review.create({ author, stars, email, content });
+
+    res.status(201).json(newReview);
+        } catch (error) {
+    res.status(400).json({ error: error.message });
         }
     };
 
     
 //delete a review
 export const deleteReview = async (req, res) => {
-    const { id } = req.params
-    
+    const { id } = req.params 
+
     if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: 'no review found'})
+            return res.status(404).json({error: 'no review found'})
     }
-    
+
     const review = await Review.findOneAndDelete({_id: id})
-    
+
     if (!review) {
-        return res.status(404).json({error:'no review found'})
+            return res.status(404).json({error:'no review found'})
     }
-    
+
     res.status(201).json(review)
     }
 
@@ -66,7 +68,7 @@ export const updateReview = async (req, res) => {
     }
 
     const review = await Review.findOneAndUpdate({_id: id}, {
-    ...req.body
+        ...req.body
     })
     
     if (!review) {
