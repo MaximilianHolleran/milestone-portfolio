@@ -1,36 +1,43 @@
 // // Import the required modules
 import express from 'express';
+import {createReview, getReview, getReviews, updateReview, deleteReview} from './reviewController.js';
+import {createContact, getContact, getContacts, updateContact, deleteContact} from'./contactController.js';
+import contactSeedData from '../models/contact_seed.js';
+import Contact from '../models/contact.js'
 
-import Review from '../models/review.js';
 // Router
 const router = express.Router();
 
 
 // Routes
 router.get('/projects', (req, res) => {
-    res.send('PROJECTS DATA');
+    res.json('PROJECTS DATA');
 });
 
-router.get('/contacts', (req, res) => {
-    res.send('CONTACTS DATA');
-});
+router.get('/reviews', getReviews);
+router.post('/reviews', createReview);
+router.get('/reviews/:id', getReview);
+router.patch('/reviews/:id', updateReview);
+router.delete('/reviews/:id', deleteReview);
 
-router.get('/reviews', (req, res) => {
-    res.send('REVIEWS DATA');
-});
+router.get('/contacts', getContacts);
+router.post('/contacts', createContact);
+router.get('/contacts/:id', getContact);
+router.patch('/contacts/:id', updateContact);
+router.delete('/contacts/:id', deleteContact);
 
-router.post('/reviews', async (req, res) => {
-    const { author, stars, email, content } = req.body;
-        try {
-        const newReview = await Review.create({ author, stars, email, content });
-        res.status(201).json(newReview);
-            } catch (error) {
-        res.status(400).json({ error: error.message });
-        }
-    });
+//contact seed data
+router.post('/contacts/seed', (req, res) => {
+    Contact.insertMany(contactSeedData)
+    .then(createdContacts => {
+        res.redirect('/contacts')
+        console.log(createdContacts)
+    })
+})
+
 
 router.get('*', (req, res) => {
-    res.send('404')
+    res.json('404')
 });
 
 

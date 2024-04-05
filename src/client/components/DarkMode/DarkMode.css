@@ -1,0 +1,44 @@
+.dark_mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.dark_mode_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mode_label {
+  color: #FFF;
+  font-weight: bold;
+
+}
+
+.toggle {
+  background-color: #ccc;
+  width: 60px;
+
+  border-radius: 30px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle.active {
+  background-color: #4CAF50;
+
+}
+
+.toggle-circle {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle.active .toggle-circle {
+  transform: translateX(40px);
+}

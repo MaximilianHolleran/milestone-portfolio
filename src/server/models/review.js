@@ -6,7 +6,7 @@ const reviewSchema = new Schema({
     stars: { type: Number, required: true },
     email: { type: String, required: true },
     content: { type: String, default: '' }
-});
+}, { timestamps: true });
 
 const Review = mongoose.model('Review', reviewSchema);
 

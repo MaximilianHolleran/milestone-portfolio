@@ -2,6 +2,8 @@ import {useState, useContext} from 'react'
 import ThemeContext from '../Context/ThemeContext'; // Import the context
 import { Link} from 'react-router-dom'
 import './NavBar.css'
+import DarkMode from '../DarkMode/DarkMode';
+
 
 
 const NavBar = () =>{
@@ -22,7 +24,7 @@ const NavBar = () =>{
                         <li><Link to="/reviewForm" className="menu-item">Reviews</Link></li>
                     </ul>
                 </div>
-                
+                 <DarkMode/>
             </nav>
 
         // </div>
