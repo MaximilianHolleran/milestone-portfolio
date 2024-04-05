@@ -1,7 +1,14 @@
-// const mongoose = require('mongoose')
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-// let engineerSchema = new mongoose.Schema({
+const contactSchema = new Schema({
+    name: { type: String, default: 'Anonymous' },
+    portrait: { type: String, },
+    socials: { type: String, },
+    resume: { type: String,  },
+    email: { type: String,  }
+});
 
-// })
+const Contact = mongoose.model('Contact', contactSchema);
 
-// module.exports = mongoose.model('Engineer', engineerSchema)
+export default Contact;
