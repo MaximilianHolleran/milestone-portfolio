@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import { useDarkMode } from '../components/Context/DarkModeContext';
 import backgroundRegular from './milestone-background.jpeg';
 import backgroundDark from './milestone-background-white.jpeg';
+import './Home.css'
 
 function Home() {
   const isDarkMode = useDarkMode(); // Use the dark mode state from context
@@ -31,14 +32,15 @@ function Home() {
 
   return (
     <>
-      <NavBar />
-      <div className="displayBox">
-        <div className="skillDisplay">
-          Knowledgeable in: {skillDisplay}
-        </div>
+    <NavBar/>
+    <div className="displayBox">
+      <div className="skillDisplay">
+      Knowledgeable in: {skillDisplay}
       </div>
+    </div> 
     </>
   );
 }
+
 
 export default Home;
