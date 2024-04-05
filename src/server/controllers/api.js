@@ -1,6 +1,6 @@
 // // Import the required modules
 import express from 'express';
-import {createReview, getReview, getReviews} from './reviewController.js'
+import {createReview, getReview, getReviews, updateReview, deleteReview} from './reviewController.js'
 
 // Router
 const router = express.Router();
@@ -16,8 +16,11 @@ router.get('/contacts', (req, res) => {
 });
 
 router.get('/reviews', getReviews);
-router.get('/reviews/:id', getReview);
 router.post('/reviews', createReview);
+router.get('/reviews/:id', getReview);
+router.patch('/reviews/:id', updateReview);
+router.delete('/reviews/:id', deleteReview);
+
 
 router.get('*', (req, res) => {
     res.json('404')
