@@ -1,6 +1,6 @@
  const contactSeedData = [
     {
-        name: 'Maximilian Holleran',
+        name: 'Maimilian Holleran',
         portrait: 'public\assets\max.portrait.png',
         socials: 'https://www.linkedin.com/in/max-holleran-8476b0297/',
         resume: 'public\assets\max.resume.pic.png',
