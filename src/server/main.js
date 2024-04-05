@@ -9,13 +9,15 @@ import mongoose from 'mongoose'
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT
-console.log(process.env.PORT)
-//mongoose.connect(process.env.MONGO_URI);
-
+mongoose.connect(process.env.MONGO_URI);
 console.log('connected to mongo: ', process.env.MONGO_URI)
 
 // Middleware to parse JSON requests
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
+})
 
 // Define routes
 app.post('/data', (req, res) => {
@@ -29,5 +31,14 @@ app.use('/api', apisRouter)
 
 // LISTEN
 ViteExpress.listen(app, PORT, () =>
-  console.log('Server is listening on port', process.env.PORT, '...'),
+  console.log('Server is listening on port', PORT, '...'),
 );
+
+// ViteExpress.listen(app, PORT, () => {
+//   try {
+//     await mongoose.connect(process.env.MONGO_URI);
+//   } catch (e) {
+//     console.error(e);
+//   }
+//   console.log('Server is listening on port', PORT, '...')
+// });
