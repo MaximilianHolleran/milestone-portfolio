@@ -7,9 +7,11 @@ import Gallery from './components/Projects/Gallery'
 import Contact from './components/Contact/Contact'
 import ReviewForm from './components/ReviewForm/ReviewForm'
 import ThemeContext from './components/Context/ThemeContext'; // Import the context
+import { DarkModeProvider } from "./components/Context/DarkModeContext";
 
 function App() {
   return (
+    <DarkModeProvider>
   
     <ThemeContext.Provider value={{ theme: 'dark' }}> {/* Provide context with value */}
     <Router>
@@ -21,6 +23,7 @@ function App() {
       </Routes>
     </Router> 
     </ThemeContext.Provider>
+    </DarkModeProvider>
   ) ;
 }
 
