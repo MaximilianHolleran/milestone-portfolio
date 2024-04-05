@@ -16,7 +16,7 @@
     {
         name: 'Luis Beltran',
         portrait: 'public\assets\luis.portrait.jpg',
-        socials: '',
+        socials: 'https://www.linkedin.com/in/luis-alberto-beltran-4bb2b75b/',
         resume: '',
         email: ''
     },
