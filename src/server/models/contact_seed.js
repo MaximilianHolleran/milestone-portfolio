@@ -21,7 +21,7 @@
         email: 'labbeltran@gmail.com'
     },
     {
-        name: 'Mohamed Abdel Rahman',
+        name: 'Mohamed Rahman',
         portrait: 'public\assets\moe.portrait.jpg',
         socials: 'https://www.linkedin.com/in/mohamed-abdel-rahman-b189aa302/',
         resume: 'public\assets\moe.resume.png',
