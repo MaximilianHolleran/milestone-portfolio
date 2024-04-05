@@ -14,6 +14,10 @@ console.log('connected to mongo: ', process.env.MONGO_URI)
 
 // Middleware to parse JSON requests
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
+})
 
 // Define routes
 app.post('/data', (req, res) => {
