@@ -34,9 +34,6 @@ function Home() {
     <>
     <NavBar/>
     <div className="displayBox">
-      <div className="img-container">
-        <a className="backgroundImg"><img className="backgroundImg" src={backgroundRegular} alt="cyberpunk-themed building"/></a>
-      </div>
       <div className="skillDisplay">
       Knowledgeable in: {skillDisplay}
       </div>
