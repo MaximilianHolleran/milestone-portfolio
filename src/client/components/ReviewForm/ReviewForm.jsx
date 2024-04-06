@@ -71,11 +71,11 @@ return(
                 <label htmlFor="starRating">Star Rating</label>
                 <select name="starRating" id="starRating" className="starRating" value={formData.starRating} onChange={handleInputChange} required>
                             <option value="">Please select an option</option>
-                            <option value="1">*</option>
-                            <option value="2">**</option>
-                            <option value="3">***</option>
-                            <option value="4">****</option>
-                            <option value="5">*****</option>
+                            <option value="1">🔥</option>
+                            <option value="2">🔥🔥</option>
+                            <option value="3">🔥🔥🔥</option>
+                            <option value="4">🔥🔥🔥🔥</option>
+                            <option value="5">🔥🔥🔥🔥🔥</option>
                 </select>
             </div>
         
