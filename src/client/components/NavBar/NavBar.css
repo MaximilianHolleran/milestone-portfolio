@@ -10,6 +10,10 @@
     /* backdrop-filter: blur(50px); */
 }
 
+.nav-wrapper.dark{
+    background: #333;
+}
+
 .nav-content{
     max-width:1300px;
     display: flex;
@@ -42,6 +46,14 @@
     cursor: pointer; 
     /* look up differnt cursors later */
 
+}
+
+.white-font{
+    color: #ffffff;
+}
+
+.white-border{
+    border-color: #ffffff;
 }
 
 .menu-item::before{
@@ -104,7 +116,7 @@
     }
 }
 
-@media(1330px){
+@media(max-width: 1330px){
     .nav-wrapper{
         padding: 0 1.7rem;
     }
