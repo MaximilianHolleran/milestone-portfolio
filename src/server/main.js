@@ -30,15 +30,15 @@ app.post('/data', (req, res) => {
 app.use('/api', apisRouter)
 
 // LISTEN
-ViteExpress.listen(app, PORT, () =>
-  console.log('Server is listening on port', PORT, '...'),
-);
+// ViteExpress.listen(app, PORT, () =>
+//   console.log('Server is listening on port', PORT, '...'),
+// );
 
-// ViteExpress.listen(app, PORT, () => {
-//   try {
-//     await mongoose.connect(process.env.MONGO_URI);
-//   } catch (e) {
-//     console.error(e);
-//   }
-//   console.log('Server is listening on port', PORT, '...')
-// });
+ViteExpress.listen(app, PORT, async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+  } catch (e) {
+    console.error(e);
+  }
+  console.log('Server is listening on port', PORT, '...')
+});
