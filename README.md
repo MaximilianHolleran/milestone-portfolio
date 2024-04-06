@@ -69,7 +69,7 @@ Moe and Luis hit it from the front
 
 #### Extra notes:
 
-Milestone project 2
+Milestone project 
 
 ReviewForm - review form submit
 
