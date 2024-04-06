@@ -1,0 +1,4 @@
+.comment-wrapper{
+    display:flex;
+    transform: translateX(20%) translateY(20%);
+}

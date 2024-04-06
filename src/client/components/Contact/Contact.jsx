@@ -1,48 +1,32 @@
-// import {useState} from 'react'
-// import linkedinLogo from './linkedinLogo.jpg';
-// import lPortrait from './assets/portrait.jpg';
-// import resumeThumbnail from './assets/resumeThumbnail.png';
+import {useState, useEffect} from 'react'
 
-function Contact (){
-    
-    const luisImg = lPortrait
-    const resumeThumb = resumeThumbnail
+
+const Contact = () =>{
+
+    const [contacts, setContacts]= useState(null)
+
+    useEffect(()=>{
+        const fetchContacts= async ()=>{
+            const response = await fetch('/api/contacts');
+            const json= await response.json()
+
+            if(response.ok){
+                setContacts(json)
+            }
+        }
+            fetchContacts()
+    }, [])
+
     return(
         <div>
-            <div className="andres">
-                <img src="" alt="profilePic"></img>
-                <img src="" alt="resume"/>
-                <footer>
-                    <a href=""><img src={linkInLogo} alt="linkedinSocial"/></a>
-                </footer>
-
-            </div>
-            <div className="max">
-                <img src="" alt="profilePic"></img>
-                <img src="" alt="resume"/>
-                <footer>
-                    <a href=""><img src={linkInLogo} alt="linkedinSocial"/></a>
-                </footer>
-            </div>
-            <div className="moe">
-                <img src="" alt="profilePic"></img>
-                <img src="" alt="resume"/>
-                <footer>
-                    <a href=""><img src={linkInLogo} alt="linkedinSocial"/></a>
-                </footer>
-            </div>
-            <div className="luis">
-                <img src={luisImg} alt="profilePic"></img>
-                <img src={resumeThumb} alt="resume"/>
-                <footer>
-                    <a href="https://www.linkedin.com/in/luis-alberto-beltran-4bb2b75b/" target="_blank">
-                        <img src={linkInLogo} alt="linkedinSocial"/>
-                    </a>
-
-                </footer>
+            <div>
+                {contacts && contacts.map((contact)=>(
+                    <p key={contact._id}>{contact.name}</p>
+                ))}
             </div>
         </div>
-    )
-}
+    );
 
+}
+      
 export default Contact

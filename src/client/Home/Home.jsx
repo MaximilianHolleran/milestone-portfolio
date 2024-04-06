@@ -37,7 +37,6 @@ function Home() {
       <div className="skillDisplay">
       Knowledgeable in: {skillDisplay}
       </div>
-      
     </div> 
     </>
   );

@@ -29,8 +29,13 @@ body {
   place-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  color: #be286e;
+  color: #fdf800;
   background-color: #152f64;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 h1 {
