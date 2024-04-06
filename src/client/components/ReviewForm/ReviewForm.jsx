@@ -1,4 +1,6 @@
 import {useState, useEffect} from 'react';
+import './ReviewForm.css'
+
 
 function ReviewForm(){
     const [formData, setFormData] = useState(
@@ -46,26 +48,26 @@ function ReviewForm(){
 
 return(
     <div>
-        <div className="review-form">
+        <div class="review-form">
             <form onSubmit= {handleSubmit}>
             <h1>Review of Services Performed</h1>
-            <div className="form-group col-sm-6 col-md-4 col-lg-3">
+            <div class="form-group">
                 <label htmlFor="name">Client First Name:</label>
-                <input className="form-control" id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
+                <input class="form-control" id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
             </div>
-            <div className="form-group col-sm-6 col-md-4 col-lg-3">
+            <div class="form-group">
                 <label htmlFor="name">Client Last Name:</label>
-                <input className="form-control" id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
+                <input class="form-control" id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
             </div>
-            <div className="form-group col-sm-6 col-md-4 col-lg-3">
+            <div className="form-group">
                 <label htmlFor="name">Client Email:</label>
-                <input className="form-control" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                <input class="form-control" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
             </div>
-            <div className="form-group col-sm-6 col-md-4 col-lg-3">
+            <div className="form-group">
                 <label htmlFor="founded">Comments/Review</label>
-                <input type="name" className="form-control" id="comments" name="comments" value={formData.comments} onChange={handleInputChange} required/>
+                <input type="name" class="form-control" id="comments" name="comments" value={formData.comments} onChange={handleInputChange} required/>
             </div>
-            <div className="form-group col-sm-6 col-md-4 col-lg-3">
+            <div className="form-group">
                 <label htmlFor="starRating">Star Rating</label>
                 <select name="starRating" id="starRating" className="starRating" value={formData.starRating} onChange={handleInputChange} required>
                             <option value="">Please select an option</option>
@@ -84,7 +86,7 @@ return(
                 <div className="comment-section">
                     {/* Map over commentsList to display submitted comments */}
                     {commentsList.map((comment, index) => (
-                        <div key={index} className="comment">
+                        <div key={index} className="form-group">
                             <p>First Name: {comment.firstName}</p>
                             <p>Last Name: {comment.lastName}</p>
                             <p>Email: {comment.email}</p>
