@@ -27,7 +27,7 @@ router.patch('/contacts/:id', updateContact);
 router.delete('/contacts/:id', deleteContact);
 
 //contact seed data
-router.get('/contacts/seed', (req, res) => {
+router.post('/contacts/seed', (req, res) => {
     Contact.insertMany(contactSeedData)
     .then(createdContacts => {
         res.redirect('/contacts')
