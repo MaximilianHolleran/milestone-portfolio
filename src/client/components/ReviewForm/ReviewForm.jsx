@@ -11,7 +11,7 @@ function ReviewForm(){
         email: '',
         comments: '',
         starRating: ''
-        
+
 }
 )
 
@@ -25,9 +25,9 @@ function ReviewForm(){
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit =(e) => {
         e.preventDefault();
-        fetch('/api/reviews', {method:'POST', body:JSON.stringify(formData)});
+        fetch('/api/reviews', {method:'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData)});
         setCommentsList(prevCommentsList => [...prevCommentsList, formData]);
         // Reset formData if needed
         setFormData({
@@ -37,14 +37,24 @@ function ReviewForm(){
             comments: '',
             starRating: ''
         });
+        handleSubmit()
     };
-
-    useEffect(()=>{
-        fetch('/api/reviews')
-        .then(response => response.json())
-        .then(data => {setCommentsList(data)})
-        .catch(error =>{console.log("Error fetching initial data:", error)})
-        },[])
+    useEffect(() => {
+        // Fetch initial data when the component mounts
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/reviews');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch initial data');
+                }
+                const data = await response.json();
+                setCommentsList(data);
+            } catch (error) {
+                console.error('Error fetching initial data:', error);
+            }
+        };
+        fetchData(); // Call the fetchData function
+    }, []);
 
 return(
     <div>
@@ -91,7 +101,7 @@ return(
                             <p>Last Name: {comment.lastName}</p>
                             <p>Email: {comment.email}</p>
                             <p>Comments: {comment.comments}</p>
-                            <p>Star Rating: {'*'.repeat(parseInt(comment.starRating))}</p>
+                            <p>Star Rating: {'🔥'.repeat(parseInt(comment.starRating))}</p>
                         </div>
                     ))}
                 </div>

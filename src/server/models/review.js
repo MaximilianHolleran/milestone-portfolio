@@ -2,10 +2,11 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const reviewSchema = new Schema({
-    author: { type: String, default: 'Anonymous' },
-    stars: { type: Number, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: { type: String, required: true },
-    content: { type: String, default: '' }
+    comments: { type: String, require: true },
+    starRating: { type: Number, required: true },
 }, { timestamps: true });
 
 const Review = mongoose.model('Review', reviewSchema);

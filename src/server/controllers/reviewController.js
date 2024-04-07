@@ -29,10 +29,10 @@ export const getReview = async (req, res) => {
 
 //create new review
 export const createReview = async (req, res) => {
-    const { author, stars, email, content } = req.body;
+    const { firstName, lastName, email, comments, starRating } = req.body;
         try {
 
-    const newReview = await Review.create({ author, stars, email, content });
+    const newReview = await Review.create({ firstName, lastName, email, comments, starRating });
 
     res.status(201).json(newReview);
         } catch (error) {
