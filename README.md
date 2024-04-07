@@ -12,7 +12,7 @@ A group project including all of our portfolios and past projects
 
 **Stack:** MongoDB, Express, NodeJS
 
-**Server-Side Rendering:** Is this VITE or JSX
+**Server-Side Rendering:** vite
 
 **Node Modules:** dotenv, vite-express
 
@@ -61,22 +61,26 @@ A group project including all of our portfolios and past projects
 
 ### User Stories
 
-Andres and Max hit it from the back and it was lovely
+Andres - Schemas
 
-Moe and Luis hit it from the front
+Max - Routes
+
+Luis - Review Form
+
+Moe - Styling/background
 
 ## Notes
 
 #### Extra notes:
 
-Milestone project 2
+Milestone project 2:
 
-ReviewForm - review form submit
+- Deployment of the site and the games in Gallery.
 
-contact - contact form submit, social links,
+- Path contact/:id that brings in data from both Gallery and Contact.
 
-gallery - mp1 games, with gifs of games and hover over gifs to be able to click on the github and to be able to go to netlify link, description of game
+- Finish styling
 
-navbar - does what it sounds like
+- Monetize website
 
-home - animated cyberpunk aesthetic
+- Future projects to add to portfolio
