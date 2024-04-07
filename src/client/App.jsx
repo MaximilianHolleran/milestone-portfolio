@@ -15,6 +15,7 @@ function App() {
   
     <ThemeContext.Provider value={{ theme: 'dark' }}> {/* Provide context with value */}
     <Router>
+      <NavBar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
