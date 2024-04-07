@@ -81,11 +81,11 @@ return(
                 <label htmlFor="starRating">Star Rating</label>
                 <select name="starRating" id="starRating" className="starRating" value={formData.starRating} onChange={handleInputChange} required>
                             <option value="">Please select an option</option>
-                            <option value="1">:fire:</option>
-                            <option value="2">:fire::fire:</option>
-                            <option value="3">:fire::fire::fire:</option>
-                            <option value="4">:fire::fire::fire::fire:</option>
-                            <option value="5">:fire::fire::fire::fire::fire:</option>
+                            <option value="1">🔥</option>
+                            <option value="2">🔥🔥</option>
+                            <option value="3">🔥🔥🔥</option>
+                            <option value="4">🔥🔥🔥🔥</option>
+                            <option value="5">🔥🔥🔥🔥🔥</option>
                 </select>
             </div>
         
@@ -101,7 +101,7 @@ return(
                             <p>Last Name: {comment.lastName}</p>
                             <p>Email: {comment.email}</p>
                             <p>Comments: {comment.comments}</p>
-                            <p>Star Rating: {':fire:'.repeat(parseInt(comment.starRating))}</p>
+                            <p>Star Rating: {'🔥'.repeat(parseInt(comment.starRating))}</p>
                         </div>
                     ))}
                 </div>
