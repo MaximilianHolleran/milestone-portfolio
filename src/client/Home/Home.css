@@ -1,6 +1,8 @@
 .title-container{
     display:flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     position:absolute;
     top: 5%;
     left: 10%
@@ -20,7 +22,7 @@
 .skillDisplay{
     border-style: groove;
     border-radius: .75em;
-    color: rgb(54, 226, 45);
+    color: rgb(85, 255, 0);
     font-weight: light;
     text-decoration: none;
     background-color: gold;
