@@ -91,7 +91,7 @@ return(
                             <p>Last Name: {comment.lastName}</p>
                             <p>Email: {comment.email}</p>
                             <p>Comments: {comment.comments}</p>
-                            <p>Star Rating: {'*'.repeat(parseInt(comment.starRating))}</p>
+                            <p>Star Rating: {'🔥'.repeat(parseInt(comment.starRating))}</p>
                         </div>
                     ))}
                 </div>
