@@ -32,10 +32,16 @@ function Home() {
 
   return (
     <>
-    <NavBar/>
+    <div className='title-container'>
+      <h1>Milestone Project: Portfolio</h1>
+        <h2>Providing Software Development that Inspires</h2>
+          <h5>Passionate Junior Developer | Transforming neural 
+            transmissions into camelCase logic</h5>
+    </div>
     <div className="displayBox">
+      <div className="knowledgeContainer">Knowledgeable in:</div>
       <div className="skillDisplay">
-      Knowledgeable in: {skillDisplay}
+       {skillDisplay}
       </div>
       
     </div> 

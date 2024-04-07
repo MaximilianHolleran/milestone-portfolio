@@ -18,13 +18,26 @@
   src: url('/src/client/assets/Orbitron/static/Orbitron-Regular.ttf') format('truetype')
 }
 
+.container{
+  max-width: 1300px !important;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media(max-width: 1300px){
+  .container{
+    padding: 1 1.5rem;
+  }
+}
+
 a {
   font-weight: 500;
   color:#262d54;
   text-decoration: inherit;
 }
 a:hover {
-  color: #f3add5;
+  color: #f7f2f5;
+  opacity: .9;
 }
 
 body {
@@ -35,6 +48,8 @@ body {
   min-height: 100vh;
   color: #fdf800;
   background-color: #152f64;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
   text-shadow:
   -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -55,7 +70,7 @@ h1 {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #fdf800;
   }
   button {
     background-color: #f9f9f9;

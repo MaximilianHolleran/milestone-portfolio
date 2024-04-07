@@ -1,4 +1,7 @@
-.comment-wrapper{
+.comment-section{
     display:flex;
-    transform: translateX(20%) translateY(20%);
+    flex-direction: column-reverse;
+    border: 2px solid black;
+    background-color: #fdf800; /* Adjust color and thickness as needed */
+    padding: 10px; /* Optional: Add padding inside the border */
 }

@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 
 // components
 import ContactDetails from './ContactDetails.jsx'
+import './Contact.css'
 
 const Contact = () =>{
 
