@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar/NavBar';
 import { useDarkMode } from '../components/Context/DarkModeContext';
 import backgroundRegular from './milestone-background.jpeg';
 import backgroundDark from './milestone-background-white.jpeg';
