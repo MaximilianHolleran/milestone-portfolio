@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 
+// components
+import ContactDetails from './ContactDetails.jsx'
 
 const Contact = () =>{
 
@@ -21,7 +23,7 @@ const Contact = () =>{
         <div>
             <div>
                 {contacts && contacts.map((contact)=>(
-                    <p key={contact._id}>{contact.name}</p>
+                    <ContactDetails key={contact._id} contact={contact} />
                 ))}
             </div>
         </div>
