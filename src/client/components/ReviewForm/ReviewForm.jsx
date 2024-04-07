@@ -39,6 +39,22 @@ function ReviewForm(){
         });
         handleSubmit()
     };
+
+    const handleDelete = async (id) => {
+        console.log('Deleting comment at index:', id);
+        try {
+            const response = await fetch(`/api/reviews/${id}`, {
+                method: 'DELETE'
+            });
+            if (!response.ok) {
+                throw new Error('Failed to delete comment');
+            }
+            setCommentsList(prevCommentsList => prevCommentsList.filter(comment => comment._id !== id));
+        } catch (error) {
+            console.error('Error deleting comment:', error);
+        }
+    };
+
     useEffect(() => {
         // Fetch initial data when the component mounts
         const fetchData = async () => {
@@ -102,6 +118,7 @@ return(
                             <p>Email: {comment.email}</p>
                             <p>Comments: {comment.comments}</p>
                             <p>Star Rating: {'🔥'.repeat(parseInt(comment.starRating))}</p>
+                            <button onClick={() => handleDelete(comment._id)}>Delete</button>
                         </div>
                     ))}
                 </div>

@@ -1,3 +1,6 @@
+import React from "react";
+import "./Contact.css";
+
 const ContactDetails = ({ contact }) => {
     return (
         <div className="contact-details">
@@ -11,6 +14,7 @@ const ContactDetails = ({ contact }) => {
                     <img src={contact.resume} alt={contact.name} />
                 </div>
             </div>
+            <div className="socials-container">
             <div className="contact-icons">
                 <img src="/assets/github.png" alt="github icon" />
                 <img src="/assets/js-icon.png" alt="javascript icons" />
@@ -18,6 +22,7 @@ const ContactDetails = ({ contact }) => {
             </div>
             <div className="contact-socials">
                 <a href={contact.socials}> <img src='/assets/linked_in.png' alt="linkedinSocial"/></a>
+            </div>
             </div>   
         </div>
     )
