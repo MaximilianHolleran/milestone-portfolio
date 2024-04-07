@@ -14,6 +14,20 @@
 
 }
 
+@font-face{
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/src/client/assets/Orbitron/static/Orbitron-Regular.ttf') format('truetype')
+}
+
+@font-face{
+  font-family: 'Orbitron';
+  font-style: light;
+  font-weight: light;
+  src: url('/src/client/assets/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype')
+}
+
 a {
   font-weight: 500;
   color:#262d54;
@@ -31,6 +45,7 @@ body {
   min-height: 100vh;
   color: #fdf800;
   background-color: #152f64;
+  font-family: 'Orbitron', sans-serif;
   text-shadow:
   -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -42,7 +57,6 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
 
 
 @media (prefers-color-scheme: light) {
